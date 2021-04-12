@@ -27,6 +27,16 @@ module.exports=function(basePath){
     }
     else{
     
+        console.log("===============================================");
+        console.log("");
+        console.log("   ALVION COMMANDER   ");
+        console.log("   Version:1.0.0");
+        console.log("");
+        console.log("   Create   : 2021/04/01");
+        console.log("   Copylight: Nakajima-Satoru");
+        console.log("");
+        console.log("===============================================");
+        
     }
 
 };
