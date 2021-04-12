@@ -1,5 +1,7 @@
 module.exports={
 
+    assets:"assets",
+
     release:{
         "/":"main@index",
         "/aaa":"main@aaa",

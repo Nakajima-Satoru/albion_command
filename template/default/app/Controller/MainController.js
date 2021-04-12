@@ -4,13 +4,20 @@ module.exports=class MainController extends Controller{
 
     handleBefore(){
 
+        this.ro.autoRender.set(true);
+        this.ro.template.set("default");
     }
 
     index(){
-        this.ro.response.end("OK");
+
+
+
     }
+
     aaa(){
-        this.ro.response.end("aaa...");
+
+        this.ro.echo("aaa....");
+
     }
 
 };
