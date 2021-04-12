@@ -4,17 +4,26 @@ cmd.shift();
 
 if(cmd[0]=="create"){
 
+    var path=cmd[1];
+    
+    var templateName=cmd[2];
+    if(!templateName){
+        templateName="default";
+    }
+
+    var create=require("./create.js");
+    create(path,templateName);
+
 }
 else if(cmd[0]=="run"){
+
+    var path=cmd[1];
+
+    var { http } = require("alvion");
+    http.listen(path);
 
 }
 else{
 
 }
-/*
-const AppController = require(__dirname+"/../template/default/app/Controller/AppController.js");
 
-var c=new AppController();
-
-console.log(c.test());
-*/

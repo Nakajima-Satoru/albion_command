@@ -1,4 +1,4 @@
-const Controller = require("alvion");
+const { Controller } = require("alvion");
 
 module.exports=class AppController extends Controller{
 
