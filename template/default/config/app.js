@@ -28,6 +28,11 @@ module.exports={
     },
 
     /**
+     * assets Control Cache
+     */
+    assetsControlCache:"max-age=3600",
+
+    /**
      * database connection
      */
     database:require(__dirname+"/database.js"),
