@@ -15,7 +15,6 @@ module.exports=class MainController extends Controller{
 
     aaa(){
 
-        this.ro.echo("aaa....");
 
     }
 

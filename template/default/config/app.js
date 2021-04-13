@@ -20,7 +20,7 @@ module.exports={
     /**
      * assets mime type
      */
-    mimeType:{
+    assetsMimeType:{
         "jpg":"image/jpg",
         "png":"image/png",
         "gif":"image/gif",
