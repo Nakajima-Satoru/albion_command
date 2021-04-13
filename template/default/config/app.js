@@ -18,6 +18,16 @@ module.exports={
     },
 
     /**
+     * assets mime type
+     */
+    mimeType:{
+        "jpg":"image/jpg",
+        "png":"image/png",
+        "gif":"image/gif",
+        "css":"text/css",
+    },
+
+    /**
      * database connection
      */
     database:require(__dirname+"/database.js"),
