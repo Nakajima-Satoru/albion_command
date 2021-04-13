@@ -15,4 +15,8 @@ module.exports={
         "/fff/{:id}/{:id2}":"page@fff",
     },
 
+    error:{
+        "Error":"error@index",
+    },
+    
 };

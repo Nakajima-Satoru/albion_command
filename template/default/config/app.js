@@ -33,6 +33,18 @@ module.exports={
     assetsControlCache:"max-age=3600",
 
     /**
+     * useClass
+     */
+    useClass:[
+        "Model",
+        "Validator",
+        "Table",
+        "TableView",
+        "Pack",
+        "UI",
+    ],
+
+    /**
      * database connection
      */
     database:require(__dirname+"/database.js"),
