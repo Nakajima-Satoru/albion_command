@@ -1,4 +1,4 @@
-const { Controller } = require("alvion");
+const { Controller } = require("albion");
 
 module.exports=class MainController extends Controller{
 

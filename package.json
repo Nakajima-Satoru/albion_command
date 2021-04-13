@@ -1,0 +1,24 @@
+{
+  "name": "albion_command",
+  "version": "1.0.0",
+  "description": "node.js web freamework \"albion\" commnd support package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nakajima-Satoru/albion_command.git"
+  },
+  "keywords": [
+    "framework",
+    "web",
+    "mvc"
+  ],
+  "author": "Nakajima-Satoru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nakajima-Satoru/albion_command/issues"
+  },
+  "homepage": "https://github.com/Nakajima-Satoru/albion_command#readme"
+}

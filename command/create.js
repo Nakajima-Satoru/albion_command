@@ -1,4 +1,4 @@
-var { fs } = require("alvion");
+var { fs } = require("albion");
 
 module.exports=function(name,template){
 

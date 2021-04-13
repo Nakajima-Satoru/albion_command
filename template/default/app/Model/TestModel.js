@@ -1,4 +1,4 @@
-const { Model } = require("alvion");
+const { Model } = require("albion");
 
 module.exports=class TestModel extends Model{
 

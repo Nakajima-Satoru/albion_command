@@ -19,7 +19,7 @@ else if(cmd[0]=="run"){
 
     var path=cmd[1];
 
-    var { http } = require("alvion");
+    var { http } = require("albion");
     http.listen(path);
 
 }

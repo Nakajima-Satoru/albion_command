@@ -21,7 +21,7 @@ module.exports=function(basePath){
     
         var path=cmd[1];
     
-        var { http } = require("alvion");
+        var { http } = require("albion");
         http.listen(basePath,path);
     
     }
@@ -29,7 +29,7 @@ module.exports=function(basePath){
     
         console.log("===============================================");
         console.log("");
-        console.log("   ALVION COMMANDER   ");
+        console.log("   ALBION COMMANDER   ");
         console.log("   Version:1.0.0");
         console.log("");
         console.log("   Create   : 2021/04/01");
