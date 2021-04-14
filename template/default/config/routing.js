@@ -13,6 +13,7 @@ module.exports={
         "/ddd/eee":"main@ddee",
         "/eee/{:id?}":"main@eee",
         "/fff/{:id}/{:id2}":"page@fff",
+        "/form":"form@index",
     },
 
     error:{
