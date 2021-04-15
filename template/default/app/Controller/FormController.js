@@ -4,8 +4,8 @@ module.exports=class FormController extends Controller{
 
     handleBefore(){
 
-        this.ro.autoRender.set(true);
-        this.ro.template.set("default");
+        this.ro.autoRender(true);
+        this.ro.template("default");
 
     }
 

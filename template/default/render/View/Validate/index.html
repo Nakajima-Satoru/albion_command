@@ -1,0 +1,21 @@
+<h2>Validate Sample</h2>
+
+<form method="post">
+    <pre><% try{
+        if(validate){ %>
+        <%-validate.get() %>
+    <% }
+         }catch(err){} %></pre>
+
+    <p>Value1 (required)</p>
+    <input type="text" name="value1">
+
+    <p>Value2 (minLength 6 chars)</p>
+    <input type="text" name="value2">
+
+    <p>Value3 (maxLength 100 chars)</p>
+    <input type="text" name="value3">
+
+    <input type="submit" value="Submit">
+
+</form>

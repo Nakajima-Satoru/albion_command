@@ -3,8 +3,8 @@ const { Controller } = require("albion");
 module.exports=class ErrorController extends Controller{
 
     handleBefore(){
-        this.ro.autoRender.set(true);
-        this.ro.template.set("default");
+        this.ro.autoRender(true);
+        this.ro.template("default");
     }
 
     index(error){
