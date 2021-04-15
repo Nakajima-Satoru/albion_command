@@ -14,6 +14,10 @@ module.exports={
         "/eee/{:id?}":"main@eee",
         "/fff/{:id}/{:id2}":"page@fff",
         "/form":"form@index",
+
+        "/validate":"validate@index",
+        
+        "/table":"table@index",
     },
 
     error:{

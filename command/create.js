@@ -1,6 +1,6 @@
 var { fs } = require("albion");
 
-module.exports=function(name,template){
+module.exports=function(name,cmd,template){
 
     var tempPath=__dirname+"/../template/"+template;
 
