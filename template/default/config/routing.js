@@ -1,7 +1,7 @@
 module.exports={
 
     assets:{        
-        "/assets":"assets",
+        "/assets":"webroot",
     },
 
     release:{
