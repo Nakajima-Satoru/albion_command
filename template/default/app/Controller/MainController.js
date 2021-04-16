@@ -26,6 +26,21 @@ module.exports=class MainController extends Controller{
         console.log(TestM.run());
         */
        
+        /*
+        var TestTable=this.Table.get("Test");
+
+        var cont = this;
+
+        cont.wait();
+
+        TestTable.query("select id, title from document_jp;",null,function(error,result){
+
+            cont.ro.debug(result);
+            
+            cont.next();
+        });
+        */
+       
     }
 
 };
