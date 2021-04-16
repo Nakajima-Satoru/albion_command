@@ -1,3 +1,15 @@
+/**
+ * ==================================================
+ * 
+ * ALBION_COMMAND Ver 1.0.0
+ * 
+ * create.js
+ * 
+ * CopyLight: Nakajima-Satoru since 0201/04/16
+ * 
+ * ==================================================
+ */
+
 var { fs } = require("albion");
 
 module.exports=function(name,cmd,template){
