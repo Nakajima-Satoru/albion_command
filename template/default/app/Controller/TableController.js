@@ -149,7 +149,12 @@ module.exports = class TableController extends Controller{
 
         this.wait();
 
-        console.log(this.Table.Test.delete());
+        this.Table.Test.delete([115,116],{physical:false,response:true},function(error,result){
+
+            console.log(error);
+            console.log(result);
+
+        });
         
         cont.ro.exit();
 

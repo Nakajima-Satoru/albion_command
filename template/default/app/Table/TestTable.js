@@ -13,6 +13,12 @@ module.exports = class TestTable extends Table{
             created:"created",
             modified:"updated",
         });
+
+        this.setLogicalDeleteKey({
+            field:"delete_flg",
+            type:"boolean",
+        });
+
     }
 
 };
