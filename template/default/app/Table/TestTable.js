@@ -6,7 +6,13 @@ module.exports = class TestTable extends Table{
         super(ro,option);
 
         this.setTable("document_jp");
-        
+
+        this.setSurrogateKey("id");
+
+        this.setTimeStamp({
+            created:"created",
+            modified:"updated",
+        });
     }
 
 };
