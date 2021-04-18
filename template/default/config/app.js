@@ -45,6 +45,20 @@ module.exports={
     ],
 
     /**
+     * log
+     */
+    log:{
+        access:{
+            file:"access.log",
+            format:"[datetime] [method][ [requestUrl] [responseCode] [remoteIp]",
+        },
+        error:{
+            file:"access.log",
+            format:"[datetime] [method] [requestUrl] [errorName] [errorMessage]",
+        },
+    },
+
+    /**
      * database connection
      */
     database:require(__dirname+"/database.js"),
