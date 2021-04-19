@@ -11,6 +11,11 @@ module.exports={
     requireCache:false,
 
     /**
+     * garbage Collection Interval (second)
+     */
+     garbageCollectionInterval:60,
+
+    /**
      * default port number
      */
     port:12345,
