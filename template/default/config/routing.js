@@ -23,5 +23,14 @@ module.exports={
     error:{
         "Error":"error@index",
     },
-    
+  
+    shell:{
+        "/":"main@index",
+        "/aaa":"main@aaa",
+    },
+
+    shell_error:{
+        "Error":"error@index",
+    },
+
 };

@@ -60,6 +60,11 @@ module.exports=function(basePath,path){
         var make=require("./command/make.js");
         make(basePath,path,cmd);
     }
+    else if(mainCmd=="command"){
+        var { consoleCommand }=require("albion");
+        var _c = new consoleCommand();
+        _c.go(basePath,path,cmd);
+    }
     else{
 
         console.log("===============================================");
