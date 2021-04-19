@@ -20,7 +20,7 @@ module.exports = class TableController extends Controller{
         //this._save1();
         //this._save2();
 
-        this._delete1();
+        //this._delete1();
     }
 
     _pattern1(){

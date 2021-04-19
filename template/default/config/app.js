@@ -6,11 +6,15 @@ module.exports={
     debugMode:true,
 
     /**
+     * require module cache
+     */
+    requireCache:false,
+
+    /**
      * default port number
      */
     port:12345,
     
-
     /**
      * host name
      */
