@@ -10,6 +10,12 @@ module.exports={
      */
     port:12345,
     
+
+    /**
+     * host name
+     */
+    host:"192.168.11.2",
+
     /**
      * default response header
      */
@@ -50,11 +56,11 @@ module.exports={
     log:{
         access:{
             file:"access.log",
-            format:"[datetime] [method][ [requestUrl] [responseCode] [remoteIp]",
+            format:"[[datetime]] [method] [requestUrl] [responseCode] [remoteIp]",
         },
         error:{
-            file:"access.log",
-            format:"[datetime] [method] [requestUrl] [errorName] [errorMessage]",
+            file:"error.log",
+            format:"[[datetime]] [method] [requestUrl] [responseCode] [remoteIp] [content]",
         },
     },
 
