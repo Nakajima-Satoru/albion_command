@@ -5,7 +5,7 @@ module.exports = class TestTable extends Table{
     constructor(ro,option){
         super(ro,option);
 
-        this.setTable("document_jp");
+        this.setTable("table01");
 
         this.setSurrogateKey("id");
 

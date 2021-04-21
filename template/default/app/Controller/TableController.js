@@ -1,12 +1,13 @@
 const { Controller } = require("albion");
+const { sync } = require("albion");
 
 module.exports = class TableController extends Controller{
 
     handleBefore(){
-
+/*
         this.ro.autoRender(true);
         this.ro.template("default");
-
+*/
     }
 
     index(){
@@ -14,7 +15,10 @@ module.exports = class TableController extends Controller{
         this.Table.load("Test");
         
         //this._pattern1();
-        //this._pattern2();
+        this._select();
+        //this._select_join();
+
+
         //this._show();
 
         //this._save1();
@@ -28,37 +32,73 @@ module.exports = class TableController extends Controller{
         this.wait();
 
         var cont=this;
-        this.Table.Test.query("select id,title from document_jp limit 5",null,function(error,result){
+        this.Table.Test.query("select id, name from table01 limit 5",null,function(error,result){
 
-            cont.ro.setData("data_t1",JSON.stringify(result,null,"　"));
+            cont.ro.debug(result);
 
             cont.next();
         });
 
     }
 
-    _pattern2(){
+    _select(){
 
         var cont=this;
 
         this.wait();
 
-        this.Table.Test.select()
-            .field(["id","title","url"])
-            .count(function(error,result){
+        sync([
+            function(next){
 
-                if(error){
-                    cont.ro.debug(error);
-                }
-                else{
-                    cont.ro.debug(result);
-                }
+                cont.Table.Test.select()
+                    .field(["id","name"])
+                    .where("id","<=",1)
+                    .all(function(error,result){
+        
+                        if(error){
+                            cont.ro.debug(error);
+                        }
+                        else{
+                            cont.ro.debug(result);
+                        }
+        
+                        next();
+                    })
+                ;
+    
+            },
+            function(){
 
-                cont.ro.exit();
-            })
-        ;
+                cont.Table.Test.select()
+                    .field(["id","code","caption"])
+                    .first(function(error,result){
+        
+                        if(error){
+                            cont.ro.debug(error);
+                        }
+                        else{
+                            cont.ro.debug(result);
+                        }
+        
+                        cont.ro.debug(cont.Table.Test.getLog());
+
+                        cont.next();
+                    })
+                ;
+
+            }
+        ]);
+
 
     }
+
+    _select_join(){
+
+
+
+
+    }
+
 
     _show(){
 
@@ -77,7 +117,7 @@ module.exports = class TableController extends Controller{
                 cont.ro.debug(result);
             }
 
-            cont.ro.exit();
+            cont.next();
         });
 
     }
