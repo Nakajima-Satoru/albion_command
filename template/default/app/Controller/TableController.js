@@ -32,11 +32,14 @@ module.exports = class TableController extends Controller{
         this.wait();
 
         var cont=this;
-        this.Table.Test.query("select id, name from table01 limit 5",null,function(error,result){
 
-            cont.ro.debug(result);
+        this.Table.Test.query("select id, name from table01 limit 5",null,function(res){
 
-            cont.next();
+            if(!res.status){
+                return cont.ro.throw(res.error.message);
+            }
+
+            cont.ro.debug(res).exit();
         });
 
     }
@@ -53,42 +56,52 @@ module.exports = class TableController extends Controller{
                 cont.Table.Test.select()
                     .field(["id","name"])
                     .where("id","<=",1)
-                    .all(function(error,result){
+                    .all(function(res){
         
-                        if(error){
-                            cont.ro.debug(error);
+                        if(!res.status){
+                            return cont.ro.throw(res.error.message);
                         }
-                        else{
-                            cont.ro.debug(result);
-                        }
-        
+         
+                        cont.ro.debug(res);
+
                         next();
                     })
                 ;
     
             },
-            function(){
+            function(next){
 
                 cont.Table.Test.select()
                     .field(["id","code","caption"])
-                    .first(function(error,result){
+                    .first(function(res){
         
-                        if(error){
-                            cont.ro.debug(error);
+                        if(!res.status){
+                            return cont.ro.throw(res.error.message);
                         }
-                        else{
-                            cont.ro.debug(result);
-                        }
-        
-                        cont.ro.debug(cont.Table.Test.getLog());
+         
+                        cont.ro.debug(res);
 
-                        cont.next();
+                        next();
                     })
                 ;
 
-            }
-        ]);
+            },
+            function(){
 
+                cont.Table.Test.select()
+                    .paginate(20,1,function(res){
+
+                        if(!res.status){
+                            return cont.ro.throw(res.error.message);
+                        }
+        
+                        cont.ro.debug(res);
+
+                        cont.next();
+
+                    });
+            },
+        ]);
 
     }
 
