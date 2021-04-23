@@ -21,4 +21,11 @@ module.exports = class TestTable extends Table{
 
     }
 
+
+    selectAfter(type,result){
+
+        console.log(type);
+
+        return result;
+    }
 };

@@ -12,19 +12,18 @@ module.exports = class TableController extends Controller{
 
     index(){
 
+        this.ro.autoRender(false);
+
         this.Table.load("Test");
         
-        //this._pattern1();
-        this._select();
-        //this._select_join();
+        if(this.ro.query.get("mode")){
+            var mode =this.ro.query.get("mode");
 
+            if(this[mode]){
+                this[mode]();
+            }
+        }
 
-        //this._show();
-
-        //this._save1();
-        //this._save2();
-
-        //this._delete1();
     }
 
     _pattern1(){
@@ -44,71 +43,147 @@ module.exports = class TableController extends Controller{
 
     }
 
-    _select(){
+    _pattern2(){
+
+        this.wait();
+
+        var cont=this;
+
+        this.Table.Test
+            .query("select id, name from table01 limit 5")
+            .then(function(res){
+
+                if(!res.status){
+                    return cont.ro.throw(res.error.message);
+                }
+
+                cont.ro.debug(res).exit();
+            });
+    }
+
+    _pattern3(){
+
+        this.wait();
+
+        var cont=this;
+
+        this.Table.Test
+            .query("select id, name from table01 limit 5")
+            .success(function(res){
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            })
+            .error(function(error){
+                cont.ro.echo("<p>ERROR</p>");
+                cont.ro.debug(error).exit();
+            });
+    }
+
+    _select1(){
 
         var cont=this;
 
         this.wait();
 
-        sync([
-            function(next){
+        cont.Table.Test
+            .select()
+            .all(function(res){
 
-                cont.Table.Test.select()
-                    .field(["id","name"])
-                    .where("id","<=",1)
-                    .all(function(res){
-        
-                        if(!res.status){
-                            return cont.ro.throw(res.error.message);
-                        }
-         
-                        cont.ro.debug(res);
+                if(!res.status){
+                    cont.ro.echo("<p>ERROR</p>");
+                    cont.ro.debug(error).exit();
+                    return;    
+                }
 
-                        next();
-                    })
-                ;
-    
-            },
-            function(next){
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            });
+    }
 
-                cont.Table.Test.select()
-                    .field(["id","code","caption"])
-                    .first(function(res){
-        
-                        if(!res.status){
-                            return cont.ro.throw(res.error.message);
-                        }
-         
-                        cont.ro.debug(res);
+    _select2(){
 
-                        next();
-                    })
-                ;
+        var cont=this;
 
-            },
-            function(){
+        this.wait();
 
-                cont.Table.Test.select()
-                    .paginate(20,1,function(res){
+        cont.Table.Test
+            .select()
+            .first(function(res){
 
-                        if(!res.status){
-                            return cont.ro.throw(res.error.message);
-                        }
-        
-                        cont.ro.debug(res);
+                if(!res.status){
+                    cont.ro.echo("<p>ERROR</p>");
+                    cont.ro.debug(error).exit();
+                    return;    
+                }
 
-                        cont.next();
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            });
+    }
 
-                    });
-            },
-        ]);
+    _select3(){
+
+        var cont=this;
+
+        this.wait();
+
+        cont.Table.Test
+            .select()
+            .value("id",function(res){
+
+                if(!res.status){
+                    cont.ro.echo("<p>ERROR</p>");
+                    cont.ro.debug(error).exit();
+                    return;    
+                }
+
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            });
 
     }
 
-    _select_join(){
+    _select4(){
 
+        var cont=this;
 
+        this.wait();
 
+        cont.Table.Test
+            .select()
+            .max("id",function(res){
+
+                if(!res.status){
+                    cont.ro.echo("<p>ERROR</p>");
+                    cont.ro.debug(error).exit();
+                    return;    
+                }
+
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            });
+
+    }
+
+    _select5(){
+
+        var cont=this;
+
+        this.wait();
+
+        cont.Table.Test
+            .select()
+            .count(function(res){
+
+                if(!res.status){
+                    cont.ro.echo("<p>ERROR</p>");
+                    cont.ro.debug(error).exit();
+                    return;    
+                }
+
+                cont.ro.echo("<p>Success</p>");
+                cont.ro.debug(res).exit();
+            });
 
     }
 
