@@ -14,7 +14,10 @@ module.exports = class TableController extends Controller{
 
         this.ro.autoRender(false);
 
-        this.Table.load("Test");
+        this.Table.load([
+            "Test",
+            "Test2",
+        ]);
         
         if(this.ro.query.get("mode")){
             var mode =this.ro.query.get("mode");
@@ -32,14 +35,38 @@ module.exports = class TableController extends Controller{
 
         var cont=this;
 
-        this.Table.Test.query("select id, name from table01 limit 5",null,function(res){
+        var output={};
 
-            if(!res.status){
-                return cont.ro.throw(res.error.message);
-            }
+        sync([
+            (next)=>{
 
-            cont.ro.debug(res).exit();
-        });
+                cont.Table.Test.query("select id, name from table01 limit 5",null,function(res){
+
+                    if(!res.status){
+                        return cont.ro.throw(res.error.message);
+                    }
+
+                    output.test1=res.result;
+
+                    next();
+                });
+        
+            },
+            (next)=>{
+
+                cont.Table.Test2.query("select id, code from table01 limit 5",null,function(res){
+
+                    if(!res.status){
+                        return cont.ro.throw(res.error.message);
+                    }
+        
+                    output.test2=res.result;
+
+                    cont.ro.debug(output).exit();
+                });
+        
+            },
+        ])
 
     }
 
