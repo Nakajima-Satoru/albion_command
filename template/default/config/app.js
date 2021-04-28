@@ -41,11 +41,20 @@ module.exports={
         "gif":"image/gif",
         "css":"text/css",
     },
-
+   
     /**
      * assets Control Cache
      */
     assetsControlCache:"max-age=3600",
+
+    /**
+     * assets index files
+     */
+    /*
+     assetsIndexFiles:[
+        "index.html",
+    ],
+    */
 
     /**
      * useClass
