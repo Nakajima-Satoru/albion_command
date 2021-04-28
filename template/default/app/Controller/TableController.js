@@ -315,4 +315,25 @@ module.exports = class TableController extends Controller{
 
     }
 
+    _tableview1(){
+
+        var tableView=this.TableView.get("Test");
+
+        this.wait();
+
+        var cont=this;
+    
+
+        this.ro.echo(tableView.where("id","<=",10).sql());
+        
+        tableView.paginate(20,1,function(res){
+
+            cont.ro.debug(res);
+
+            cont.ro.exit();
+
+        });       
+
+    }
+
 };
