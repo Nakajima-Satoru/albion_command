@@ -4,7 +4,10 @@ module.exports = class ErrorShell extends Shell{
 
     index(error){
 
-        console.log("Console Error!");
+        console.log("------------------------------------------");
+        console.log(error.stack);
+        console.log("------------------------------------------");
+
 
     }
     
