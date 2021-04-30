@@ -23,7 +23,7 @@ module.exports={
     /**
      * host name
      */
-    host:"192.168.11.2",
+    host:"localhost",
 
     /**
      * default response header
