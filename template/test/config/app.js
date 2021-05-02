@@ -18,12 +18,12 @@ module.exports={
     /**
      * default port number
      */
-    port:1456,
+    port:2345,
     
     /**
      * host name
      */
-    // host:"localhost",
+    host:"localhost",
 
     /**
      * default response header

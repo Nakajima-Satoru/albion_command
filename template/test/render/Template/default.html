@@ -1,15 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="stylesyeet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-size:13px;
+    background:#444;
+    color:#fff;
+}
+a{
+    color:#4ce;
+}
+h1,h2,h3,h4,h5{
+    font-weight:100;
+}
+header{
+    background:#259;
+    color:#fff;
+    padding:0 20px;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:50px;
+    z-index:101;
+}
+header>*{
+    color:#fff;
+    display:inline-block;
+    line-height:50px;
+    height:50px;
+    text-decoration:none;
+}
+header .title{
+    letter-spacing:3px;
+    font-size:22px;
+    font-weight:100;
+}
+.sidemenu{
+    position:fixed;
+    left:0;
+    top:0;
+    width:270px;
+    height:100%;
+    background:#313131;
+    z-index:100;
+    padding-top:50px;
+}
+.sidemenu .b{
+    padding:20px;
+}
+.contents{
+    margin-top:50px;
+    margin-left:270px;
+    padding:20px;
+}
+</style>
 </head>
 <body>
 
     <header>
-
+        <a class="title" href="/">TestSample</a>
     </header>
 
-    <%-ro.rendering.loadView() %>
+    <div class="sidemenu">
+        <div class="b">
+            <p><a href="/">Top</a></p>
+            <p><a href="/page">Page</a></p>
+            <p><a href="/page/no_render">No Render Page</a>
+            <p><a href="/page/no_template">No Template Page</a>
+            <p><a href="/404test">Error (404 Not Found)</a></p>
+            <p><a href="/500test">Error (500 Internal Server Error)</a></p>    
+        </div>
+    </div>
+
+    <div class="contents">
+        <%-ro.rendering.loadView() %>
+    </div>
 
     <footer>
 
