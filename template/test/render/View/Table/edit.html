@@ -1,0 +1,61 @@
+<h2 class="mb-5">Table Control Add/Edit</h2>
+
+<form method="post">
+	<table>
+		<tr>
+			<th>name</th>
+			<td>
+				<input type="text" name="name">
+				<% if(validate){
+					if(validate.get("name")){
+						%>
+						<div class="error">
+							<%- validate.get("name") %>
+						</div>
+						<%
+					}
+				}
+				%>
+			</td>
+		</tr>
+		<tr>
+			<th>code</th>
+			<td>
+				<input type="text" name="code">
+				<% if(validate){
+					if(validate.get("code")){
+					%>
+					<div class="error">
+						<%- validate.get("code") %>
+					</div>
+					<%
+					}
+				}
+				%>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">message</th>
+			<td>
+				<textarea name="message" cols="60" rows="6"></textarea>
+				<% if(validate){
+					if(validate.get("message")){
+					%>
+					<div class="error">
+						<%- validate.get("message") %>
+					</div>
+					<%
+					}
+				}
+				%>
+			</td>
+		</tr>
+		
+		<tr>
+			<th></th>
+			<td>
+				<input type="submit" value="Submit" class="btn btn-success">
+			</td>
+		</tr>
+	</table>
+</form>

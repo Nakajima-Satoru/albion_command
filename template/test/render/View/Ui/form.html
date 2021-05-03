@@ -1,0 +1,107 @@
+<h2>FormUi Sample</h2>
+
+<%- Ui.Form.start() %>
+<table>
+	<tr>
+		<th>textbox</th>
+		<td>
+			<%-
+			Ui.Form.tagInput("textbox",{
+				style:"width:200px",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th>select</th>
+		<td>
+			<%
+			var selected={
+				select0:"select 0 text...",
+				select1:"select 1 text...",
+				select2:"select 2 text...",
+				select3:"select 3 text...",
+				select4:"select 4 text...",
+			};
+			%>
+			<%-
+			Ui.Form.tagSelect("select",selected,{
+				empty:"▼ selected ....",
+				style:"width:200px",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">textarea</th>
+		<td>
+			<%-
+			Ui.Form.tagTextarea("textarea",{
+				style:"height:100px;width:500px",
+				value:"test aaaaaaaaaaa....",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th>radio button</th>
+		<td>
+			<%
+			var radioSelect={
+				radio0:"radio button 0 text...",
+				radio1:"radio button 1 text...",
+				radio2:"radio button 2 text...",
+				radio3:"radio button 3 text...",
+				radio4:"radio button 4 text...",
+			};
+			%>
+			<%-
+			Ui.Form.tagRadio("radio",radioSelect,{
+				style:"width:20px",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th>checkbox</th>
+		<td>
+			<%
+			var checkboxSelect={
+				checkbox0:"checkbox button 0 text...",
+				checkbox1:"checkbox button 1 text...",
+				checkbox2:"checkbox button 2 text...",
+				checkbox3:"checkbox button 3 text...",
+				checkbox4:"checkbox button 4 text...",
+			};
+			%>
+			<%-
+			Ui.Form.tagCheckbox("checkbox",checkboxSelect,{
+				style:"width:20px",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th>checkbox (one)</th>
+		<td>
+			<%-
+			Ui.Form.tagCheckbox("checkbox0","i agree",{
+				style:"width:20px",
+			});
+			%>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%-
+			Ui.Form.tagSubmitBtn("Submit",{
+				class:"btn btn-success",
+			});
+			%>
+		</td>
+	</tr>
+</table>
+
+
+<%- Ui.Form.end(); %>

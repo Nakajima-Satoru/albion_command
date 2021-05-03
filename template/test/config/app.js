@@ -56,7 +56,8 @@ module.exports={
         "Table",
         "TableView",
         "Pack",
-        "UI",
+        "Ui",
+        "Shell",
     ],
 
     /**

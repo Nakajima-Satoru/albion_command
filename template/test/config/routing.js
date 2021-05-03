@@ -14,6 +14,17 @@ module.exports={
             "/page/no_template":"page@no_template",
             "/404test":"page@errNotfound",
             "/500test":"page@errInternalServerError",
+
+            "/validate/1":"validate@index1",
+            "/validate/2":"validate@index2",
+            "/validate/3":"validate@index3",
+            
+            "/table":"table@index",
+            "/table/regist":"table@edit",
+            "/table/edit/{:id}":"table@edit",
+            
+            "/ui/form":"ui@form",
+            
         },
     
         error:{
