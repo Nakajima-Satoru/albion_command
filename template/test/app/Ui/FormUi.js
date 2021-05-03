@@ -17,6 +17,8 @@ module.exports = class FormUi extends Ui{
 			params.method="post";
 		}
 
+		this._method=params.method;
+
 		var optStr = this._optionString(params);
 		var str="<form "+optStr+">";
 
@@ -28,6 +30,7 @@ module.exports = class FormUi extends Ui{
 	 * @returns 
 	 */
 	end(){
+		delete this._method;
 		return "</form>";
 	}
 
@@ -49,6 +52,12 @@ module.exports = class FormUi extends Ui{
 
 		if(name){
 			params.name=name;
+			if(!(params.type=="radio" || params.type=="checkbox")){
+				var value=this._getRequestData(name);
+				if(value){
+					params.value=value;
+				}
+			}
 		}
 
 		var optStr = this._optionString(params);
@@ -75,6 +84,11 @@ module.exports = class FormUi extends Ui{
 		if(params.value){
 			value=params.value;
 		}
+		
+		var _value = this._getRequestData(name);
+		if(_value){
+			value=_value;
+		}
 
 		var optStr = this._optionString(params,[
 			"value",
@@ -91,6 +105,8 @@ module.exports = class FormUi extends Ui{
 		}
 
 		params.name=name;
+
+		var _value = this._getRequestData(name);
 
 		var optStr = this._optionString(params,[
 			"value",
@@ -110,7 +126,11 @@ module.exports = class FormUi extends Ui{
 			for(var n=0;n<selectedList.length;n++){
 				var value=selectedList[n];
 				
-				optionTagStr+="<option value=\""+n+"\">"+value+"</option>";
+				var selected="";
+				if(_value==n){
+					selected="selected";
+				}
+				optionTagStr+="<option value=\""+n+"\" "+selected+">"+value+"</option>";
 			}
 		}
 		else{
@@ -118,7 +138,13 @@ module.exports = class FormUi extends Ui{
 			for(var n=0;n<_colum.length;n++){
 				var field=_colum[n];
 				var value=selectedList[field];
-				optionTagStr+="<option value=\""+field+"\">"+value+"</option>";
+
+				var selected="";
+				if(_value==field){
+					selected="selected";
+				}
+
+				optionTagStr+="<option value=\""+field+"\" "+selected+">"+value+"</option>";
 			}
 		}		
 
@@ -142,11 +168,19 @@ module.exports = class FormUi extends Ui{
 
 		params.type="radio";
 
+		var _value = this._getRequestData(name);
+
 		var str="";
 		if(selectedList instanceof Array){
 			for(var n=0;n<selectedList.length;n++){
 				var value=selectedList[n];
 				params.value=n;
+
+				delete params.checked;
+				if(_value==n){
+					params.checked=true;
+				}
+
 				str+="<label>"+this.tagInput(name,params)+value+"</label>";
 			}
 		}
@@ -155,8 +189,13 @@ module.exports = class FormUi extends Ui{
 			for(var n=0;n<_colum.length;n++){
 				var field=_colum[n];
 				var value=selectedList[field];
-
 				params.value=field;
+
+				delete params.checked;
+				if(_value==field){
+					params.checked=true;
+				}
+
 				str+="<label>"+this.tagInput(name,params)+value+"</label>";
 			}
 		}
@@ -184,6 +223,7 @@ module.exports = class FormUi extends Ui{
 			names=name;
 		}
 
+		var _values = this._getRequestData(name);
 
 		params.type="checkbox";
 
@@ -192,6 +232,14 @@ module.exports = class FormUi extends Ui{
 			for(var n=0;n<selectedList.length;n++){
 				var value=selectedList[n];
 				params.value=n;
+
+				delete params.checked;
+				if(_values){
+					if(_values.includes(n)){
+						params.checked=true;
+					}	
+				}
+
 				str+="<label>"+this.tagInput(names,params)+value+"</label>";
 			}
 		}
@@ -200,8 +248,15 @@ module.exports = class FormUi extends Ui{
 			for(var n=0;n<_colum.length;n++){
 				var field=_colum[n];
 				var value=selectedList[field];
-
 				params.value=field;
+				
+				delete params.checked;
+				if(_values){
+					if(_values.includes(field)){
+						params.checked=true;
+					}
+				}
+
 				str+="<label>"+this.tagInput(names,params)+value+"</label>";
 			}
 		}
@@ -263,4 +318,37 @@ module.exports = class FormUi extends Ui{
 		return optStr;
 	}
 	
+	/**
+	 * _getRequestData
+	 * @param {*} name 
+	 * @returns 
+	 */
+	_getRequestData(name){
+
+		var method=this._method.toLowerCase();
+
+		if(method=="get"){
+
+			if(this.ro.query.get(name)){
+				return this.ro.query.get(name);
+			}
+
+		}
+		else if(method=="post"){
+
+			if(this.ro.post.get(name)){
+				return this.ro.post.get(name);
+			}
+
+		}
+		else if(method=="put"){
+
+			if(this.ro.put.get(name)){
+				return this.ro.put.get(name);
+			}
+
+		}
+
+	}
+
 };
