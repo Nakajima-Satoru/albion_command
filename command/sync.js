@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * ALBION_COMMAND Ver 1.0.0
+ * FW_DAGGER_COMMAND Ver 1.0.0
  * 
  * sync.js
  * 

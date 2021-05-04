@@ -1,4 +1,4 @@
-const { Validator } = require("albion");
+const { Validator } = require("fw_dagger");
 
 module.exports = class Table01Validator extends Validator{
 

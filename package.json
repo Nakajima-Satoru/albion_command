@@ -1,14 +1,14 @@
 {
-  "name": "albion_command",
+  "name": "fw_dagger_command",
   "version": "1.0.0",
-  "description": "node.js web freamework \"albion\" commnd support package.",
+  "description": "node.js web freamework \"fw_dagger\" commnd support package.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nakajima-Satoru/albion_command.git"
+    "url": "git+https://github.com/Nakajima-Satoru/fw_dagger_command.git"
   },
   "keywords": [
     "framework",
@@ -18,7 +18,7 @@
   "author": "Nakajima-Satoru",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nakajima-Satoru/albion_command/issues"
+    "url": "https://github.com/Nakajima-Satoru/fw_dagger_command/issues"
   },
-  "homepage": "https://github.com/Nakajima-Satoru/albion_command#readme"
+  "homepage": "https://github.com/Nakajima-Satoru/fw_dagger_command#readme"
 }

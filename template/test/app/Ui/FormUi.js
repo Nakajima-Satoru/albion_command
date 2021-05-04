@@ -1,4 +1,4 @@
-const { Ui } = require("albion");
+const { Ui } = require("fw_dagger");
 
 module.exports = class FormUi extends Ui{
 

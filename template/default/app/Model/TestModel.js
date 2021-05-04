@@ -1,4 +1,4 @@
-const { Model } = require("albion");
+const { Model } = require("fw_dagger");
 
 module.exports=class TestModel extends Model{
 

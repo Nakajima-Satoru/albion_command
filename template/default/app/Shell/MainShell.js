@@ -1,5 +1,5 @@
-const { Shell } = require("albion");
-const { sync } = require("albion");
+const { Shell } = require("fw_dagger");
+const { sync } = require("fw_dagger");
 
 module.exports = class MainShell extends Shell{
 

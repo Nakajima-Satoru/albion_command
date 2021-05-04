@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * ALBION_COMMAND Ver 1.0.0
+ * FW_DAGGER_COMMAND Ver 1.0.0
  * 
  * create.js
  * 
@@ -10,7 +10,7 @@
  * ==================================================
  */
 
-var { fs } = require("albion");
+var { fs } = require("fw_dagger");
 
 module.exports=function(name,cmd,template){
 

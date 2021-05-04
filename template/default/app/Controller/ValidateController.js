@@ -1,4 +1,4 @@
-const { Controller } = require("albion");
+const { Controller } = require("fw_dagger");
 
 module.exports = class ValidateController extends Controller{
 

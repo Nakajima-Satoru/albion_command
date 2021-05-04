@@ -1,4 +1,4 @@
-const { Table } = require("albion");
+const { Table } = require("fw_dagger");
 
 module.exports = class TestTable extends Table{
 

@@ -1,4 +1,4 @@
-const { TableView } = require("albion");
+const { TableView } = require("fw_dagger");
 
 module.exports = class TestTableView extends TableView{
 

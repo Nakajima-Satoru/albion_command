@@ -1,5 +1,5 @@
-const { Controller } = require("albion");
-const { sync } = require("albion");
+const { Controller } = require("fw_dagger");
+const { sync } = require("fw_dagger");
 
 module.exports = class TableController extends Controller{
 

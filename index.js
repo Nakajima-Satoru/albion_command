@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * ALBION_COMMAND Ver 1.0.0
+ * FW_DAGGER_COMMAND Ver 1.0.0
  * 
  * index.js
  * 
@@ -11,7 +11,7 @@
  */
 
 
-const albionCommand = function(basePath,path){
+const daggerCommand = function(basePath,path){
 
     this.run=function(){
 
@@ -28,7 +28,7 @@ const albionCommand = function(basePath,path){
             return;
         }
         else if(mainCmd=="-version" || mainCmd=="-v"){
-            console.log("ALBION (Version:1.0.0)");
+            console.log("FW_DAGGER (Version:1.0.0)");
             console.log("Create: 2021/04/01  Copylight: Nakajima-Satoru");
             return;
         }
@@ -42,7 +42,7 @@ const albionCommand = function(basePath,path){
     
                 console.log("===============================================");
                 console.log("");
-                console.log("   ALBION COMMANDER   ");
+                console.log("   FW_DAGGER COMMANDER   ");
                 console.log("   Version:1.0.0");
                 console.log("");
                 console.log("   Create   : 2021/04/01");
@@ -88,7 +88,7 @@ const albionCommand = function(basePath,path){
         
         }
         else if(mainCmd=="run"){    
-            var { http } = require("albion");
+            var { http } = require("fw_dagger");
 
             var option=null;
             if(cmd.length){
@@ -106,7 +106,7 @@ const albionCommand = function(basePath,path){
             make(basePath,path,cmd);
         }
         else if(mainCmd=="command"){
-            var { consoleCommand }=require("albion");
+            var { consoleCommand }=require("fw_dagger");
             var _c = new consoleCommand();
             _c.go(basePath,path,cmd);
         }
@@ -114,7 +114,7 @@ const albionCommand = function(basePath,path){
     
             console.log("===============================================");
             console.log("");
-            console.log("   ALBION COMMANDER   ");
+            console.log("   FW_DAGGER COMMANDER   ");
             console.log("   Version:1.0.0");
             console.log("");
             console.log("   Create   : 2021/04/01");
@@ -150,10 +150,10 @@ const albionCommand = function(basePath,path){
     };
 
     this.serviceStart=function(option){
-        var { http } = require("albion");
+        var { http } = require("fw_dagger");
         http.listen(basePath,path,option);
     };
 
 };
 
-module.exports = albionCommand;
+module.exports = daggerCommand;

@@ -1,4 +1,4 @@
-const { Shell } = require("albion");
+const { Shell } = require("fw_dagger");
 
 module.exports = class ErrorShell extends Shell{
 
