@@ -12,13 +12,16 @@ module.exports={
             "/page/{:arg1}/{:arg2?}":"page@argtest",
             "/page/no_render":"page@noRender",
             "/page/no_template":"page@no_template",
+            "/page/other":"page@other",
             "/404test":"page@errNotfound",
             "/500test":"page@errInternalServerError",
 
             "/validate/1":"validate@index1",
             "/validate/2":"validate@index2",
             "/validate/3":"validate@index3",
-            
+            "/validate/4":"validate@index4",
+            "/validate/5":"validate@index5",
+
             "/table":"table@index",
             "/table/regist":"table@edit",
             "/table/edit/{:id}":"table@edit",

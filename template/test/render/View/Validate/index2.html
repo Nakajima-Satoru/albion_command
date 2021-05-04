@@ -1,0 +1,114 @@
+<h2>Validate Test 2</h2>
+
+<%- Ui.Form.start(); %>
+<table>
+	<tr>
+		<th>alphaNumeric</th>
+		<td>
+			<div>※ Only half-width alphanumeric characters are allowed.</div>
+			<%- Ui.Form.tagInput("alphaNumeric"); %>
+			<%- Ui.Form.error("alphaNumeric"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">alphaNumeric <br>(Allow characters)</th>
+		<td>
+			<div>※ Only half-width alphanumeric characters and the following special characters are allowed.</div>
+			<div>※ "." "=" "@" "-" "_".</div>
+			<%- Ui.Form.tagInput("alphaNumeric_allow"); %>
+			<%- Ui.Form.error("alphaNumeric_allow"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">numeric</th>
+		<td>
+			<div>※ Only half-width numbers are allowed</div>
+			<%- Ui.Form.tagInput("numeric"); %>
+			<%- Ui.Form.error("numeric"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">numeric <br>(Allow characters)</th>
+		<td>
+			<div>※ Only half-width numeric characters and the following special characters are allowed.</div>
+			<div>※ "-" "_".</div>
+			<%- Ui.Form.tagInput("numeric_allow"); %>
+			<%- Ui.Form.error("numeric_allow"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">length</th>
+		<td>
+			<div>※ 6 characters allowed</div>
+			<%- Ui.Form.tagInput("length"); %>
+			<%- Ui.Form.error("length"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">minLength</th>
+		<td>
+			<div>※ Allows 6 characters or more.</div>
+			<%- Ui.Form.tagInput("minLength"); %>
+			<%- Ui.Form.error("minLength"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">maxLength</th>
+		<td>
+			<div>※ Allow up to 6 characters.</div>
+			<%- Ui.Form.tagInput("maxLength"); %>
+			<%- Ui.Form.error("maxLength"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">betweenLenth</th>
+		<td>
+			<div>※ Allowed within the range of 4 to 20 characters.</div>
+			<%- Ui.Form.tagInput("betweenLength"); %>
+			<%- Ui.Form.error("betweenLength"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">value</th>
+		<td>
+			<div>※ Allow 6 as an integer value.</div>
+			<%- Ui.Form.tagInput("value"); %>
+			<%- Ui.Form.error("value"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">minValue</th>
+		<td>
+			<div>※ Allow 6 as an integer value.</div>
+			<%- Ui.Form.tagInput("minValue"); %>
+			<%- Ui.Form.error("minValue"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">maxValue</th>
+		<td>
+			<div>※ Allow 10 or more as an integer value.</div>
+			<%- Ui.Form.tagInput("maxValue"); %>
+			<%- Ui.Form.error("maxValue"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">betweenValue</th>
+		<td>
+			<div>※ Allow a range of 4 to 20 as an integer value.</div>
+			<%- Ui.Form.tagInput("betweenValue"); %>
+			<%- Ui.Form.error("betweenValue"); %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%-
+			Ui.Form.tagSubmitBtn("Submit",{
+				class:"btn btn-success",
+			});
+			%>
+		</td>
+	</tr>
+</table>
+<%- Ui.Form.end(); %>

@@ -1,19 +1,94 @@
 <h2>Validate Test 1</h2>
 
-<form method="post">
+<%- Ui.Form.start(); %>
 	<table>
 		<tr>
-			<th>reuired</th>
+			<th>required</th>
 			<td>
-
-
+				<%- Ui.Form.tagInput("required"); %>
+				<%- Ui.Form.error("required"); %>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">requiredIf</th>
+			<td>
+				<div>
+					<%- Ui.Form.tagCheckbox("requiredIfAgree","Make the input field mandatory.",{
+						style:"vertical-align:middle;margin-right:5px;",
+					}); %>
+				</div>
+				<%- Ui.Form.tagInput("requiredIf"); %>
+				<%- Ui.Form.error("requiredIf"); %>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">requiredWith</th>
+			<td>
+				<p>Required if all of the following are selected.</p>
+				<div>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWith01","required with 01",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWith02","required with 02",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWith03","required with 03",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>	
+				</div>
+				<%- Ui.Form.tagInput("requiredWith"); %>
+				<%- Ui.Form.error("requiredWith"); %>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">requiredWithOr</th>
+			<td>
+				<p>Required if you select any of the following.</p>
+				<div>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWithOr01","required with OR 01",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWithOr02","required with OR 02",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>
+					<span style="margin-right:10px">
+						<%- Ui.Form.tagCheckbox("requiredWithOr03","required with OR 03",{
+							style:"vertical-align:middle;margin-right:5px;",
+						}); %>
+					</span>	
+				</div>
+				<%- Ui.Form.tagInput("requiredWithOr"); %>
+				<%- Ui.Form.error("requiredWithOr"); %>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">confirmed</th>
+			<td>
+				<%- Ui.Form.tagInput("confirmed"); %>
+				<p>Enter the same content as above.</p>
+				<%- Ui.Form.tagInput("confirmed_res"); %>
+				<%- Ui.Form.error("confirmed"); %>
 			</td>
 		</tr>
 		<tr>
 			<th></th>
 			<td>
-				<input type="submit" value="Submit" class="btn btn-success">
+				<%-
+				Ui.Form.tagSubmitBtn("Submit",{
+					class:"btn btn-success",
+				});
+				%>
 			</td>
 		</tr>
 	</table>
-</form>
+<%- Ui.Form.end(); %>

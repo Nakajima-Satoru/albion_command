@@ -1,0 +1,86 @@
+<h2>Validate Test 3</h2>
+
+<style>
+input[type=checkbox]{
+	margin-left:10px;
+	margin-right:5px;
+	vertical-align:middle;
+}
+</style>
+<%- Ui.Form.start(); %>
+	<table>
+		<tr>
+			<th class="top">selectedCount</th>
+			<td>
+				<div>※ Select 4 from the options below.</div>
+				<%
+				var checkList = [
+					"Tokyo",
+					"Osaka",
+					"Nagoya",
+					"Fukuoka",
+					"Hiroshima",
+					"Kyoto",
+					"Sizuoka",
+					"Saitama",
+					"Hokkaido",
+				];
+				%>
+				<%- Ui.Form.tagCheckbox("selectedCount",checkList); %>
+				<%- Ui.Form.error("selectedCount"); %>
+			</td>
+		</tr>
+		<tr>
+			<th class="top">minSelectedCount</th>
+			<td>
+				<div>※ Be sure to select 3 or more.</div>
+				<%- Ui.Form.tagCheckbox("minSelectedCount",checkList); %>
+				<%- Ui.Form.error("minSelectedCount"); %>
+			</td>
+		</tr>
+	</tr>
+	<tr>
+		<th class="top">maxSelectedCount</th>
+		<td>
+			<div>※ Select up to 7.</div>
+			<%- Ui.Form.tagCheckbox("maxSelectedCount",checkList); %>
+			<%- Ui.Form.error("maxSelectedCount"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">betweenSelectedCount</th>
+		<td>
+			<div>※ 3 to 7 can be selected.</div>
+			<%- Ui.Form.tagCheckbox("betweenSelectedCount",checkList); %>
+			<%- Ui.Form.error("betweenSelectedCount"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">like</th>
+		<td>
+			<div>※ Allow if "abc" is included in the string.</div>
+			<%- Ui.Form.tagInput("like"); %>
+			<%- Ui.Form.error("like"); %>
+		</td>
+	</tr>
+	<tr>
+		<th class="top">any</th>
+		<td>
+			<div>※ Enter one of "aaa", "bbb", and "ccc".</div>
+			<%- Ui.Form.tagInput("any"); %>
+			<%- Ui.Form.error("any"); %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%-
+			Ui.Form.tagSubmitBtn("Submit",{
+				class:"btn btn-success",
+			});
+			%>
+		</td>
+	</tr>
+
+	</table>
+<%- Ui.Form.end(); %>

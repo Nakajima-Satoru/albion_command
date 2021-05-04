@@ -1,0 +1,137 @@
+<h2>Validate Test 4</h2>
+
+<%- Ui.Form.start(); %>
+<table>
+	<tr>
+		<th>date</th>
+		<td>
+			<div>※ Enter date.</div>
+			<%- Ui.Form.tagInput("date"); %>
+			<%- Ui.Form.error("date"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>minDate</th>
+		<td>
+			<div>※ Enter the date after "2021-01-01".</div>
+			<%- Ui.Form.tagInput("minDate"); %>
+			<%- Ui.Form.error("minDate"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>maxDate</th>
+		<td>
+			<div>※ Enter the date before "2021-12-31".</div>
+			<%- Ui.Form.tagInput("maxDate"); %>
+			<%- Ui.Form.error("maxDate"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>betweenDate</th>
+		<td>
+			<div>※ Enter a date between "2021-01-01" and "2021-12-31".</div>
+			<%- Ui.Form.tagInput("betweenDate"); %>
+			<%- Ui.Form.error("betweenDate"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isInt</th>
+		<td>
+			<div>※ Enter an integer value.</div>
+			<%- Ui.Form.tagInput("isInt"); %>
+			<%- Ui.Form.error("isInt"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isBool</th>
+		<td>
+			<div>※ Enter a Boolean value.</div>
+			<%- Ui.Form.tagInput("isBool"); %>
+			<%- Ui.Form.error("isBool"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isEmail</th>
+		<td>
+			<div>※ Enter the email format.</div>
+			<%- Ui.Form.tagInput("isEmail"); %>
+			<%- Ui.Form.error("isEmail"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isTel</th>
+		<td>
+			<div>※ Enter phone number format.</div>
+			<%- Ui.Form.tagInput("isTel"); %>
+			<%- Ui.Form.error("isTel"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isIp</th>
+		<td>
+			<div>※ Enter IP address format.</div>
+			<%- Ui.Form.tagInput("isIp"); %>
+			<%- Ui.Form.error("isIp"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isUrl</th>
+		<td>
+			<div>※ Enter URL format.</div>
+			<%- Ui.Form.tagInput("isUrl"); %>
+			<%- Ui.Form.error("isUrl"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isZipJP</th>
+		<td>
+			<div>※ Enter Japanese postal code format.</div>
+			<%- Ui.Form.tagInput("isZipJP"); %>
+			<%- Ui.Form.error("isZipJP"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isKatakana</th>
+		<td>
+			<div>※ Enter only full-width katakana.</div>
+			<%- Ui.Form.tagInput("isKatakana"); %>
+			<%- Ui.Form.error("isKatakana"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>isHiragana</th>
+		<td>
+			<div>※ Enter only full-width hiragana.</div>
+			<%- Ui.Form.tagInput("isHiragana"); %>
+			<%- Ui.Form.error("isHiragana"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>allowedBeforeToday</th>
+		<td>
+			<div>※ Only dates before today are allowed.</div>
+			<%- Ui.Form.tagInput("allowedBeforeToday"); %>
+			<%- Ui.Form.error("allowedBeforeToday"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>allowedAfterToday</th>
+		<td>
+			<div>※ Only dates after today are allowed.</div>
+			<%- Ui.Form.tagInput("allowedAfterToday"); %>
+			<%- Ui.Form.error("allowedAfterToday"); %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%-
+			Ui.Form.tagSubmitBtn("Submit",{
+				class:"btn btn-success",
+			});
+			%>
+		</td>
+	</tr>
+</table>
+
+<%- Ui.Form.end(); %>

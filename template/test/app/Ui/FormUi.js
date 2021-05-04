@@ -2,6 +2,12 @@ const { Ui } = require("fw_dagger");
 
 module.exports = class FormUi extends Ui{
 
+	constructor(ro,option){
+		super(ro,option);
+
+		this._validates={};
+	}
+
 	/**
 	 * start
 	 * @param {*} params 
@@ -235,7 +241,7 @@ module.exports = class FormUi extends Ui{
 
 				delete params.checked;
 				if(_values){
-					if(_values.includes(n)){
+					if(_values.includes(n.toString())){
 						params.checked=true;
 					}	
 				}
@@ -292,6 +298,30 @@ module.exports = class FormUi extends Ui{
 
 		var str=this.tagInput(null,params);
 		return str;
+	}
+
+
+	/**
+	 * setError
+	 * @param {*} validates 
+	 * @returns 
+	 */
+	setError(validates){
+		this._validates=validates;
+		return this;
+	}
+
+	/**
+	 * error
+	 * @param {*} name 
+	 * @param {*} option 
+	 * @returns 
+	 */
+	error(name,option){
+		if(this._validates[name]){
+			var str="<div class=\"error\">"+this._validates[name]+"</div>";
+			return str;
+		}
 	}
 
 	/**

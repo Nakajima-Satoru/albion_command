@@ -1,0 +1,38 @@
+<h2>Validate Test 5</h2>
+
+<%- Ui.Form.start(); %>
+<table>
+	<tr>
+		<th>custom</th>
+		<td>
+			<%- Ui.Form.tagInput("custom"); %>
+			<%- Ui.Form.error("custom"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>custom2</th>
+		<td>
+			<%- Ui.Form.tagInput("custom2"); %>
+			<%- Ui.Form.error("custom2"); %>
+		</td>
+	</tr>
+	<tr>
+		<th>custom3</th>
+		<td>
+			<%- Ui.Form.tagInput("custom3"); %>
+			<%- Ui.Form.error("custom3"); %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<%-
+			Ui.Form.tagSubmitBtn("Submit",{
+				class:"btn btn-success",
+			});
+			%>
+		</td>
+	</tr>
+</table>
+
+<%- Ui.Form.end(); %>
