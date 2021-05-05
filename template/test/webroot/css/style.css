@@ -43,6 +43,7 @@ header .title{
     background:#313131;
     z-index:100;
     padding-top:50px;
+    overflow:auto;
 }
 .sidemenu .b{
     padding:20px;
@@ -89,4 +90,16 @@ table tr th.top{
 	color:#fff;
 	padding:5px 10px;
 	margin:2px 0;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(50,210,200,0.4);
+  box-shadow:0 0 0 1px rgba(255, 255, 255, .3);
 }

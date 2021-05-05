@@ -12,7 +12,12 @@ module.exports={
             "/page/{:arg1}/{:arg2?}":"page@argtest",
             "/page/no_render":"page@noRender",
             "/page/no_template":"page@no_template",
-            "/page/other":"page@other",
+            "/page/other_view":"page@otherView",
+            "/page/time_lag":"page@time_lag",
+
+            "/page/redirect":"page@redirect",
+            "/page/redirected":"page@redirected",
+
             "/404test":"page@errNotfound",
             "/500test":"page@errInternalServerError",
 

@@ -1,6 +1,51 @@
 <h2 class="mb-5">Table Control Sample</h2>
 
-<div class="mb-3">
-	<a href="/table/regist/" class="btn btn-primary">+ Add Recode</a>
+<div class="mb-4">
+	<a href="/table/regist/" class="btn btn-success">+ Add Recode</a>
 </div>
 
+<style>
+table{
+	width:100%;
+}
+table.list tr td,
+table.list tr th{
+	padding:5px 2px;
+	border-bottom:solid 1px #999;	
+}
+table.list tr th{
+	border-top:solid 1px #999;	
+	background:#333;
+	text-align:center;
+}
+</style>
+
+<div class="mb-3 h5">
+	total <%- paginate.totalCount; %> ( <%- paginate.page+" / "+paginate.totalPage; %> )
+</div>
+
+<table class="list">
+	<tr>
+		<th style="width:120px">created</th>
+		<th style="width:120px">updated</th>
+		<th style="width:160px">code</th>
+		<th>name</th>
+		<th style="width:150px"></th>
+	</tr>
+	<%
+	for(var n=0;n<result.length;n++){
+		var row = result[n];
+	%>
+	<tr>
+		<td><%- dateFormat(row.created,"Y-m-d H:i"); %></td>
+		<td><%- dateFormat(row.updated,"Y-m-d H:i"); %></td>
+		<td><%- ro.sanitize(row.code); %></td>
+		<td><%- ro.sanitize(row.name); %></td>
+		<td style="text-align:right">
+			<a href="/table/edit/<%- row.id; %>" class="btn btn-primary btn-sm">edit</a>
+		</td>
+	</tr>
+	<%
+	}
+	%>
+</table>

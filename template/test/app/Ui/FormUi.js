@@ -73,6 +73,25 @@ module.exports = class FormUi extends Ui{
 	}
 
 	/**
+	 * tagHidden
+	 * @param {*} name 
+	 * @param {*} value 
+	 * @param {*} params 
+	 * @returns 
+	 */
+	tagHidden(name,params){
+		if(!params){
+			params={};
+		}
+
+		params.type="hidden";
+
+		var str=this.tagInput(name,params);
+		
+		return str;
+	}
+
+	/**
 	 * tagTextarea
 	 * @param {*} name 
 	 * @param {*} params 

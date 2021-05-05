@@ -25,6 +25,28 @@ module.exports = class PageController extends AppController{
 		;
 	}
 
+	otherView(){
+		this.ro.view("other_View");
+	}
+
+	time_lag(){
+		this.wait();
+
+		var cont=this;
+
+		setTimeout(function(){
+
+			cont.next();
+
+		},3000);
+	}
+
+	redirect(){
+		this.ro.redirect("/page/redirected");
+	}
+
+	redirected(){}
+
 	errNotfound(){
 		this.ro
 			.status(404)

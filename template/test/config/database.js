@@ -5,8 +5,7 @@ module.exports={
         host:"localhost",
         username:"root",
         password:"",
-        database:"mk2_adm",
-
+        database:"dagger_test_db",
     },
 
 };
