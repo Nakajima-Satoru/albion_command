@@ -1,8 +1,4 @@
-<h2 class="mb-5">Table Control Sample</h2>
-
-<div class="mb-4">
-	<a href="/table/regist/" class="btn btn-success">+ Add Recode</a>
-</div>
+<h2 class="mb-5">Table Control Sample (DUST BOX)</h2>
 
 <style>
 table{
@@ -24,8 +20,12 @@ table.list tr th{
 	total <%- paginate.totalCount; %> ( <%- paginate.page+" / "+paginate.totalPage; %> )
 </div>
 
+<div class="mb-3">
+	<a href="/table/physical_delete" class="btn btn-danger">Empty the trash.</a>
+</div>
+
 <div class="text-right mb-2">
-	<a href="/table/dustbox">Look at the trash.</a>
+	<a href="/table">back to index</a>
 </div>
 <table class="list">
 	<tr>
@@ -45,8 +45,7 @@ table.list tr th{
 		<td><%- ro.sanitize(row.code); %></td>
 		<td><%- ro.sanitize(row.name); %></td>
 		<td style="text-align:right">
-			<a href="/table/edit/<%- row.id; %>" class="btn btn-primary btn-sm">edit</a>
-			<a href="/table/delete/<%- row.id; %>" class="btn btn-danger btn-sm">delete</a>
+			<a href="/table/revert/<%- row.id; %>" class="btn btn-secondary btn-sm">revert</a>
 		</td>
 	</tr>
 	<%

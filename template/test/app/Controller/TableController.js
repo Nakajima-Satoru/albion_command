@@ -4,6 +4,7 @@ const { dateFormat } = require("fw_dagger");
 module.exports = class TableController extends AppController{
 
 	handleBefore(){
+
 		super.handleBefore();
 
 		this.Ui.load("Form");
@@ -123,4 +124,96 @@ module.exports = class TableController extends AppController{
 
 	}
 
+	delete(id){
+
+		this.ro.autoRender(false);
+
+		this.wait();
+
+		var cont=this;
+
+		this.Table.Table01.transaction(function(resolve){
+
+			cont.Table.Table01
+				.delete(id,function(res){
+
+					if(!res.status){
+						cont.ro.throw(res.error);
+						resolve(false);
+						return;
+					}
+
+					resolve(true);
+
+					cont.ro.redirect("/table");
+
+					cont.next();
+				});
+			
+		});
+
+	}
+
+	dustBox(){
+
+		this.ro.setData("dateFormat",dateFormat);
+
+		this.wait();
+
+		var cont=this;
+
+		this.Table.Table01
+			.select()
+			.logicaldeleteOnly(true)
+			.paginate(20,1,function(res){
+
+				cont.ro
+					.setData("result",res.result)
+					.setData("paginate",res.paginate);
+
+				cont.next();
+			});
+
+	}
+
+	revert(id){
+
+		this.ro.autoRender(false);
+
+		this.wait();
+
+		var cont=this;
+
+		this.Table.Table01.transaction(function(resolve){
+
+			cont.Table.Table01
+				.revert(id,function(res){
+
+					console.log(res);
+					
+					if(!res.status){
+						cont.ro.throw(res.error);
+						resolve(false);
+						return;
+					}
+
+					resolve(true);
+
+					cont.ro.redirect("/table/dustbox");
+
+					cont.next();
+				});
+			
+		});
+
+	}
+
+	physicalDelete(){
+
+		this.ro.autoRender(false);
+
+		this.ro.echo("physical delete...");
+
+
+	}
 }

@@ -30,6 +30,10 @@ module.exports={
             "/table":"table@index",
             "/table/regist":"table@edit",
             "/table/edit/{:id}":"table@edit",
+            "/table/delete/{:id}":"table@delete",
+            "/table/dustbox":"table@dustBox",
+            "/table/revert/{:id}":"table@revert",
+            "/table/physical_delete":"table@physicalDelete",
             
             "/ui/form":"ui@form",
             
