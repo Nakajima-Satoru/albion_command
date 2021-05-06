@@ -18,7 +18,7 @@ module.exports={
     /**
      * default port number
      */
-    port:2345,
+    port:1234,
     
     /**
      * host name
