@@ -1,21 +1,13 @@
-const { Controller } = require("fw_dagger");
+const AppController = require("./AppController.js");
 
-module.exports=class ErrorController extends Controller{
-
-    handleBefore(){
-        this.ro.autoRender(true);
-        this.ro.template("default");
-    }
+module.exports = class ErrorController extends AppController{
 
     index(error){
-        if(this.ro.status()==404){
-            this.ro.setData("error","PAGE NOT FOUND");
-
+        
+        if(this.ro.status() == 500){
+            console.log(error.stack);
         }
-        else{
-            this.ro.setData("error",error.stack);
-        }
-
+        this.ro.setData("error",error.stack);
     }
 
 };

@@ -13,12 +13,12 @@ module.exports={
     /**
      * garbage Collection Interval (second)
      */
-     garbageCollectionInterval:60,
+    // garbageCollectionInterval:60,
 
     /**
      * default port number
      */
-    port:12345,
+    port:2345,
     
     /**
      * host name
@@ -41,20 +41,11 @@ module.exports={
         "gif":"image/gif",
         "css":"text/css",
     },
-   
+
     /**
      * assets Control Cache
      */
     assetsControlCache:"max-age=3600",
-
-    /**
-     * assets index files
-     */
-    /*
-     assetsIndexFiles:[
-        "index.html",
-    ],
-    */
 
     /**
      * useClass
@@ -65,7 +56,8 @@ module.exports={
         "Table",
         "TableView",
         "Pack",
-        "UI",
+        "Ui",
+        "Shell",
     ],
 
     /**

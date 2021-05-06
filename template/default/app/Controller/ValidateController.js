@@ -1,29 +1,106 @@
-const { Controller } = require("fw_dagger");
+const AppController = require("./AppController.js");
 
-module.exports = class ValidateController extends Controller{
+module.exports = class ValidateController extends AppController{
 
-    handleBefore(){
+	handleBefore(){
+		super.handleBefore();
 
-        this.ro.autoRender(true);
-        this.ro.template("default");
-    }
+		this.Ui.load("Form");
 
-    index(){
+		this.Validator.load("Test1");
 
-        this.ro.setData("validate",{});
+	}
 
-        if(this.ro.post.get()){
-            var post=this.ro.post.get();
+	index1(){
 
-            var vres = this.Validator.get("Test")
-                .verify(post);
+		if(this.ro.post.get()){
+			var post = this.ro.post.get();
 
-            if(vres.get()){
-                this.ro.setData("validate",vres);
-            }
+			var vres = this.Validator.Test1.verify(post);
 
-        }
+			if(vres.get()){
+				this.Ui.Form.setError(vres);
+				return;
+			}
 
-    }
+			this.ro.debug(post).exit();
+		}
 
+	}
+
+	index2(){
+
+		if(this.ro.post.get()){
+			var post = this.ro.post.get();
+
+			var vres = this.Validator.Test1.verify(post,{
+				ruleName:"rules_v2",
+			});
+
+			if(vres.get()){
+				this.Ui.Form.setError(vres);
+				return;
+			}
+
+			this.ro.debug(post).exit();
+		}
+
+	}
+
+	index3(){
+
+		if(this.ro.post.get()){
+			var post = this.ro.post.get();
+
+			var vres = this.Validator.Test1.verify(post,{
+				ruleName:"rules_v3",
+			});
+
+			if(vres.get()){
+				this.Ui.Form.setError(vres);
+				return;
+			}
+
+			this.ro.debug(post).exit();
+		}
+
+	}
+
+	index4(){
+
+		if(this.ro.post.get()){
+			var post = this.ro.post.get();
+
+			var vres = this.Validator.Test1.verify(post,{
+				ruleName:"rules_v4",
+			});
+
+			if(vres.get()){
+				this.Ui.Form.setError(vres);
+				return;
+			}
+
+			this.ro.debug(post).exit();
+		}
+
+	}
+
+	index5(){
+
+		if(this.ro.post.get()){
+			var post = this.ro.post.get();
+
+			var vres = this.Validator.Test1.verify(post,{
+				ruleName:"rules_v5",
+			});
+
+			if(vres.get()){
+				this.Ui.Form.setError(vres);
+				return;
+			}
+
+			this.ro.debug(post).exit();
+		}
+
+	}
 };
