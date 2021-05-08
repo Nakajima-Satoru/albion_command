@@ -1,0 +1,31 @@
+<h2>SessionPack</h2>
+
+<br>
+<h3>:Session Write Sample</h3>
+<%- Ui.Form.start(); %>
+<table>
+    <tr>
+        <th>value1</th>
+        <td>
+            <%- Ui.Form.tagInput("value1"); %>
+        </td>
+    </tr>
+    <tr>
+        <th>value2</th>
+        <td>
+            <%- Ui.Form.tagInput("value2"); %>
+        </td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>
+            <%- Ui.Form.tagSubmitBtn("Submit",{
+                class:"btn btn-primary",
+            });
+            %>
+        </td>
+    </tr>
+</table>
+
+
+<%- Ui.Form.end(); %>
