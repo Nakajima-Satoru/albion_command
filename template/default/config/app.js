@@ -11,6 +11,11 @@ module.exports={
     requireCache:false,
 
     /**
+     * require module check
+     */
+    requireCheck:true,
+
+    /**
      * garbage Collection Interval (second)
      */
     // garbageCollectionInterval:60,
@@ -51,12 +56,14 @@ module.exports={
      * useClass
      */
     useClass:[
+        "Controller",
         "Model",
         "Validator",
         "Table",
         "TableView",
         "Pack",
         "Ui",
+        "Render",
         "Shell",
     ],
 
