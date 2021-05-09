@@ -91,4 +91,12 @@ module.exports={
      */
     routing:require(__dirname+"/routing.js"),
 
+
+    /**
+     * requires
+     */
+    requires:[
+        "const",
+    ],
+
 };
