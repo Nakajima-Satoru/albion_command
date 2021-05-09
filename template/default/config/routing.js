@@ -34,7 +34,10 @@ module.exports={
             "/table/dustbox":"table@dustBox",
             "/table/revert/{:id}":"table@revert",
             "/table/physical_delete":"table@physicalDelete",
+
             
+            "/pack/session":"pack/Session@index",
+
             "/ui/form":"ui@form",
             
         },
