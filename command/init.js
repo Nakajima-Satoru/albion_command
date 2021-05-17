@@ -337,7 +337,7 @@ module.exports = (basePath,path,cmd)=>{
                         c_
                             .echo("\n")
                             .echo("\n")
-                            .oecho("completed.");
+                            .echo("completed.");
                     }
                     else{
                         c_
@@ -352,35 +352,90 @@ module.exports = (basePath,path,cmd)=>{
         },
     ]);
 
-};
 
-const initCreate=function(basePath,data){
+    const initCreate=function(basePath,data){
 
-    var projectPath=basePath+"/"+data.name;
+        var projectPath=basePath+"/"+data.name;
+    
+        // mkdir project
+        if(!fs.existsSync(projectPath)){
+            fs.mkdirSync(projectPath);
+            c_.echo("# mkdir "+projectPath+"\n");
+        }
+    
+        // mkdir app
+        if(!fs.existsSync(projectPath+"/app")){
+            fs.mkdirSync(projectPath+"/app");
+            c_.echo("# mkdir "+projectPath+"/app\n");
+        }
+    
+        // mkdir config
+        if(!fs.existsSync(projectPath+"/config")){
+            fs.mkdirSync(projectPath+"/config");
+            c_.echo("# mkdir "+projectPath+"/config\n");
+        }
+    
+        // mkdir render
+        if(!fs.existsSync(projectPath+"/render")){
+            fs.mkdirSync(projectPath+"/render");
+            c_.echo("# mkdir "+projectPath+"/render\n");
+        }
+    
+        // mkdir assets directory
+        if(!fs.existsSync(projectPath+"/"+data.assets)){
+            fs.mkdirSync(projectPath+"/"+data.assets);
+            c_.echo("# mkdir "+projectPath+"/"+data.assets+"\n");
+        }
+    
+        if(!fs.existsSync(projectPath+"/app/Controller")){
+            !fs.mkdirSync(projectPath+"/app/Controller");
+            c_.echo("# mkdir "+projectPath+"/app/Controller\n");
+        }
+    
+        if(data.useModel){
+            if(!fs.existsSync(projectPath+"/app/Model")){
+                !fs.mkdirSync(projectPath+"/app/Model");
+                c_.echo("# mkdir "+projectPath+"/app/Model\n");
+            }
+        }
+    
+        if(data.useTable){
+            if(!fs.existsSync(projectPath+"/app/Table")){
+                !fs.mkdirSync(projectPath+"/app/Table");
+                c_.echo("# mkdir "+projectPath+"/app/Table\n");
+            }
+        }
 
-    // mkdir project
-    if(!fs.existssSync(projectPath)){
-        fs.mkdirSync(projectPath);
-    }
+        if(data.useTableView){
+            if(!fs.existsSync(projectPath+"/app/TableView")){
+                !fs.mkdirSync(projectPath+"/app/TableView");
+                c_.echo("# mkdir "+projectPath+"/app/TableView\n");
+            }
+        }
+        
+        if(data.usePack){
+            if(!fs.existsSync(projectPath+"/app/Pack")){
+                !fs.mkdirSync(projectPath+"/app/Pack");
+                c_.echo("# mkdir "+projectPath+"/app/Pack\n");
+            }
+        }
 
-    // mkdir app
-    if(!fs.existssSync(projectPath+"/app")){
-        fs.mkdirSync(projectPath+"/app");
-    }
+        if(data.useUi){
+            if(!fs.existsSync(projectPath+"/app/Ui")){
+                !fs.mkdirSync(projectPath+"/app/Ui");
+                c_.echo("# mkdir "+projectPath+"/app/Ui\n");
+            }
+        }
 
-    // mkdir config
-    if(!fs.existssSync(projectPath+"/config")){
-        fs.mkdirSync(projectPath+"/config");
-    }
+        if(data.useShell){
+            if(!fs.existsSync(projectPath+"/app/Shell")){
+                !fs.mkdirSync(projectPath+"/app/Shell");
+                c_.echo("# mkdir "+projectPath+"/app/Shell\n");
+            }
+        }
 
-    // mkdir render
-    if(!fs.existssSync(projectPath+"/render")){
-        fs.mkdirSync(projectPath+"/render");
-    }
-
-    // mkdir assets directory
-    if(!fs.existssSync(projectPath+"/"+data.assets)){
-        fs.mkdirSync(projectPath+"/"+data.assets);
-    }
+        console.log(data);
+    
+    };
 
 };
