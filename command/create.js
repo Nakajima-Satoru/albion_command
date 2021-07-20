@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * FW_DAGGER_COMMAND Ver 1.0.0
+ * m02_incubator
  * 
  * create.js
  * 
@@ -10,7 +10,7 @@
  * ==================================================
  */
 
-var { fs } = require("fw_dagger");
+var { fs } = require("m02");
 
 module.exports=function(name,cmd,template){
 

@@ -1,4 +1,4 @@
-const { Table } = require("fw_dagger");
+const { Table } = require("m02");
 
 module.exports = class Table01Table extends Table{
 

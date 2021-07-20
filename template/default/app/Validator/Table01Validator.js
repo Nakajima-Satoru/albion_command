@@ -1,4 +1,4 @@
-const { Validator } = require("fw_dagger");
+const { Validator } = require("m02");
 
 module.exports = class Table01Validator extends Validator{
 

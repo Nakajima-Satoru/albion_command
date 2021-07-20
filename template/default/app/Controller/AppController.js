@@ -1,4 +1,4 @@
-const { Controller } = require("fw_dagger");
+const { Controller } = require("m02");
 
 module.exports = class AppController extends Controller{
 

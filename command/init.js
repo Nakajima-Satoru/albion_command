@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * FW_DAGGER_COMMAND Ver 1.0.0
+ * m02_incubator
  * 
  * init.js
  * 
@@ -28,7 +28,7 @@ module.exports = (basePath,path,cmd)=>{
                 .echo("\n")
                 .echo("  =================================================================================\n")
                 .echo("\n")
-                .echo("  Create a new project for \"fw_dagger\".\n")
+                .echo("  Create a new project for \"m02\".\n")
                 .echo("\n")
                 .echo("  Answer the following questions. \n")
                 .echo("  (If you do not enter it, the value displayed in parentheses will be applied.)\n")

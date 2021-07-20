@@ -1,5 +1,5 @@
 const AppController = require("./AppController.js");
-const { dateFormat } = require("fw_dagger");
+const { dateFormat } = require("m02");
 
 module.exports = class TableController extends AppController{
 

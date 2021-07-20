@@ -1,4 +1,4 @@
-const { Ui } = require("fw_dagger");
+const { Ui } = require("m02");
 
 module.exports = class FormUi extends Ui{
 

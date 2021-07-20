@@ -1,5 +1,5 @@
 
-const { Validator } = require("fw_dagger");
+const { Validator } = require("m02");
 
 module.exports = class Test1Validator extends Validator{
 

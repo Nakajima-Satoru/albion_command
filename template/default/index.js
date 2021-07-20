@@ -1,3 +1,3 @@
 const path = require("path");
-const daggerCommand = require("fw_dagger_command");
-new daggerCommand(path.dirname(__dirname),path.basename(__dirname)).projectRun();
+const incubator = require("m02_incubator");
+new incubator(path.dirname(__dirname),path.basename(__dirname)).projectRun();

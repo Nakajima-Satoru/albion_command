@@ -1,7 +1,7 @@
 /**
  * ==================================================
  * 
- * FW_DAGGER_COMMAND Ver 1.0.0
+ * m02_incubator
  * 
  * index.js
  * 
@@ -11,7 +11,7 @@
  */
 
 
-const daggerCommand = function(basePath,path){
+const incubator = function(basePath,path){
 
     /**
      * run
@@ -29,8 +29,8 @@ const daggerCommand = function(basePath,path){
         cmd.shift();
 
         if(mainCmd=="-version" || mainCmd=="-v"){
-            console.log("FW_DAGGER (Version:1.0.0)");
-            console.log("Create: 2021/04/01  Copylight: Nakajima-Satoru");
+            console.log("m02_incubator (Version:1.0.0)");
+            console.log("Create: 2021/07/19  Copylight: Nakajima-Satoru");
             return;
         }
         else if(mainCmd=="init"){
@@ -50,7 +50,7 @@ const daggerCommand = function(basePath,path){
         
         }
         else if(mainCmd=="run"){    
-            var { http } = require("fw_dagger");
+            var { http } = require("m02");
 
             var option=null;
             if(cmd.length){
@@ -64,7 +64,7 @@ const daggerCommand = function(basePath,path){
             http.listen(basePath,path,option);
         }
         else if(mainCmd=="command"){
-            var { consoleCommand }=require("fw_dagger");
+            var { consoleCommand }=require("m02");
             var _c = new consoleCommand();
             _c.go(basePath,path,cmd);
         }
@@ -76,10 +76,10 @@ const daggerCommand = function(basePath,path){
 
             console.log("===============================================");
             console.log("");
-            console.log("   FW_DAGGER COMMANDER   ");
+            console.log("   m02_incubator   ");
             console.log("   Version:1.0.0");
             console.log("");
-            console.log("   Create   : 2021/04/01");
+            console.log("   Create   : 2021/07/19");
             console.log("   Copylight: Nakajima-Satoru");
             console.log("");
             console.log("===============================================");
@@ -110,7 +110,7 @@ const daggerCommand = function(basePath,path){
         cmd.shift();
         cmd.shift();
 
-        var { http } = require("fw_dagger");
+        var { http } = require("m02");
 
         var option=null;
         if(cmd.length){
@@ -125,5 +125,4 @@ const daggerCommand = function(basePath,path){
     };
 
 };
-
-module.exports = daggerCommand;
+module.exports = incubator;

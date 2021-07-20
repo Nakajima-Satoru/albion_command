@@ -1,7 +1,7 @@
 {
-  "name": "fw_dagger_command",
+  "name": "m02_incubator",
   "version": "1.0.0",
-  "description": "node.js web freamework \"fw_dagger\" commnd support package.",
+  "description": "node.js web freamework \"m02\" commnd support package.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

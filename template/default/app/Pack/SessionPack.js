@@ -1,4 +1,4 @@
-const { Pack } = require("fw_dagger");
+const { Pack } = require("m02");
 
 module.exports = class SessionPack extends Pack{
 
